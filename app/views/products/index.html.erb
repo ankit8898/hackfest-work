@@ -1,0 +1,15 @@
+<% @category.each do |c| %>
+  <h1><%= link_to c.name %></h1>
+  <ul>
+    <% sub_categories = c.sub_categories %>
+    <% for sub_category in sub_categories %>
+      <li><%= link_to sub_category.name%></li>
+      <%products = sub_category.products%>
+      <% for product in products %>
+        <ul><%= link_to product.name %></ul>
+      <%end%>
+    <%end%>
+
+  </ul>
+<%end%>
+
